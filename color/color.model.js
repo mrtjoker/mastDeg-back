@@ -2,7 +2,7 @@ mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ColorSchema = new Schema({
-    colorName: String,
+    color: String,
     create_at: Date
 });
 

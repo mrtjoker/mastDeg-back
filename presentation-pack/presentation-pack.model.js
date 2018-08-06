@@ -2,7 +2,7 @@ mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var PresentationPackSchema = new Schema({
-    presentationPackName: String,
+    presentationPack: String,
     create_at: Date
 });
 

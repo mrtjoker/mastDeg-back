@@ -8,7 +8,7 @@ service.all = () => {
 
 service.insert = (data, create_at) => {
     data = new Contraindications({
-        ContraindicationsName: data.ContraindicationsName,
+        contraindications: data.contraindications,
         create_at: create_at
     })
     return data.save();

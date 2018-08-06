@@ -2,7 +2,7 @@ mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var WarningSchema = new Schema({
-    warningName: String,
+    warning: String,
     create_at: Date
 });
 

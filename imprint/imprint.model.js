@@ -2,7 +2,7 @@ mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ImprintSchema = new Schema({
-    ImprintName: String,
+    imprint: String,
     create_at: Date
 });
 

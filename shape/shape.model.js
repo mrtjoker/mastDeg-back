@@ -2,7 +2,7 @@ mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ShapeSchema = new Schema({
-    shapeName: String,
+    shape: String,
     create_at: Date
 });
 

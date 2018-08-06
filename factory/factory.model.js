@@ -2,7 +2,7 @@ mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var FactorySchema = new Schema({
-    factoryName: String,
+    factory: String,
     create_at: Date
 });
 

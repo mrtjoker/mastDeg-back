@@ -2,7 +2,7 @@ mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var UsFDASchema = new Schema({
-    usFDAName: String,
+    usFDA: String,
     create_at: Date
 });
 

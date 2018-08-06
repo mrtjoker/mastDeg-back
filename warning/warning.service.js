@@ -8,7 +8,7 @@ service.all = () => {
 
 service.insert = (data, create_at) => {
     data = new Warning({
-        warningName: data.warningName,
+        warning: data.warning,
         create_at: create_at
     })
     return data.save();

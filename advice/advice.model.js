@@ -2,7 +2,7 @@ mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var AdviceSchema = new Schema({
-    AdviceName: String,
+    advice: String,
     create_at: Date
 });
 

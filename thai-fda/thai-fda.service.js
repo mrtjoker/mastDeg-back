@@ -8,7 +8,9 @@ service.all = () => {
 
 service.insert = (data, create_at) => {
     data = new ThaiFDA({
-        thaiFDAName: data.thaiFDAName,
+        initialThaiFDA: data.initialThaiFDA,
+        thaiFDAEN: data.thaiFDAEN,
+        thaiFDATH: data.thaiFDATH,
         create_at: create_at
     })
     return data.save();

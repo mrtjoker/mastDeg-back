@@ -2,7 +2,7 @@ mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var FormSchema = new Schema({
-    formName: String,
+    form: String,
     create_at: Date
 });
 

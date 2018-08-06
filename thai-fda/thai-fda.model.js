@@ -2,7 +2,9 @@ mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ThaiFDASchema = new Schema({
-    thaiFDAName: String,
+    initialThaiFDA: String,
+    thaiFDAEN: String,
+    thaiFDATH: String,
     create_at: Date
 });
 

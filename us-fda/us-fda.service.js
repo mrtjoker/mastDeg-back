@@ -8,7 +8,7 @@ service.all = () => {
 
 service.insert = (data, create_at) => {
     data = new UsFDA({
-        usFDAName: data.usFDAName,
+        usFDA: data.usFDA,
         create_at: create_at
     })
     return data.save();

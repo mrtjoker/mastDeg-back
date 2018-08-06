@@ -8,7 +8,7 @@ service.all = () => {
 
 service.insert = (data, create_at) => {
     data = new Presentation({
-        presentationName: data.presentationName,
+        presentation: data.presentation,
         create_at: create_at
     })
     return data.save();

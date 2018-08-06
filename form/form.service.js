@@ -8,7 +8,7 @@ service.all = () => {
 
 service.insert = (data, create_at) => {
     data = new Form({
-        formName: data.formName,
+        form: data.form,
         create_at: create_at
     })
     return data.save();

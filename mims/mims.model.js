@@ -2,7 +2,7 @@ mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var MimsSchema = new Schema({
-    mimsName: String,
+    mimsClass: String,
     create_at: Date
 });
 

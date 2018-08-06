@@ -8,7 +8,7 @@ service.all = () => {
 
 service.insert = (data, create_at) => {
     data = new Color({
-        colorName: data.colorName,
+        color: data.color,
         create_at: create_at
     })
     return data.save();

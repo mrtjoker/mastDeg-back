@@ -3,7 +3,7 @@ mongoose = require('./config/mongoose');
 
 port = process.env.PORT || 3000;
 
-app.use(require("./adverse-reactions./adverse-reactions..route"));
+app.use(require("./adverse-reactions/adverse-reactions.route"));
 app.use(require("./advice/advice.route"));
 app.use(require("./brand-name/brand-name.route"));
 app.use(require("./color/color.route"));
