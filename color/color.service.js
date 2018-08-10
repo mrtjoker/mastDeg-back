@@ -9,6 +9,7 @@ service.all = () => {
 service.insert = (data, create_at) => {
     data = new Color({
         color: data.color,
+        colorCode: data.colorCode,
         create_at: create_at
     })
     return data.save();

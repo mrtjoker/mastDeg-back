@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 var ColorSchema = new Schema({
     color: String,
+    colorCode: String,
     create_at: Date
 });
 
