@@ -10,7 +10,7 @@ app.use(require("./color/color.route"));
 app.use(require("./contraindications/contraindications.route"));
 app.use(require("./dosage/dosage.route"));
 app.use(require("./factory/factory.route"));
-app.use(require("./form/form.route"));
+app.use(require("./form/form.route"));                      
 app.use(require("./generic-name/generic-name.route"));
 app.use(require("./imprint/imprint.route"));
 app.use(require("./indications/indications.route"));
@@ -22,5 +22,6 @@ app.use(require("./shape/shape.route"));
 app.use(require("./thai-fda/thai-fda.route"));
 app.use(require("./us-fda/us-fda.route"));
 app.use(require("./warning/warning.route"));
+app.use(require("./medicines/medicines.route"));
 
 app.listen( port );
