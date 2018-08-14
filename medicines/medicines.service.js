@@ -6,7 +6,7 @@ service.all = () => {
     return Medicines.find().sort( { create_at: -1 } );
 };
 
-service.insert = (data, create_at) => {
+service.insert = (data) => {
     data = new Medicines({
         adverseReactions: data.adverseReactions,
         advice: data.advice,
@@ -34,7 +34,7 @@ service.insert = (data, create_at) => {
         manuFacturer: data.manuFacturer,
         distributor: data.distributor,
         marketer: data.marketer,
-        create_at: create_at
+        create_at: data.create_at
     })
     return data.save();
 };
