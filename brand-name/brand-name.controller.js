@@ -13,16 +13,32 @@ controller.insert = (req, res) => {
     res.send();
 };
 
-controller.update = ( req, res ) => {
-    service.update( req.params.id , req.body ).then( ( data ) => { 
-        res.json( data ); 
-    } );
+controller.update = (req, res) => {
+    service.update(req.params.id, req.body).then((data) => {
+        res.json(data);
+    });
 };
 
-controller.destroy = ( req, res ) => {
-    service.delete( req.params.id ).then( () => { 
-        res.json( "200" ); 
-    } );
+controller.destroy = (req, res) => {
+    service.delete(req.params.id).then(() => {
+        res.json("200");
+    });
 };
+
+controller.checkInsert = (data) => {
+    (async () => {
+        let value = { brandName: data };
+        let list = await service.all();
+        let check = false;
+        const created_at = new Date().toISOString();
+        for (let i = 0; i < list.length; i++) {
+            if (data === list[i].brandName)
+                check = await true;
+        }
+        if (check === false) {
+            service.insert(value, created_at);
+        };
+    })();
+}
 
 module.exports = controller;

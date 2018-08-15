@@ -1,4 +1,15 @@
 const service = require('./medicines.service');
+const controllerColor = require('../color/color.controller');
+const controllerBrand = require('../brand-name/brand-name.controller');
+const controlledForm = require('../form/form.controller');
+const controllerGeneric = require('../generic-name/generic-name.controller');
+const controllerImprint = require('../imprint/imprint.controller');
+const controllerMims = require('../mims/mims.controller');
+const controllerPresentation = require('../presentation/presentation.controller');
+const controllerPresentationPack = require('../presentationPack/presentationPack.controller');
+const controllerThaiFDA = require('../thai-fda/thai-fda.controller');
+const controllerUsFDA = require('../us-fda/us-fda.controller');
+const controllerFactory = require('../factory/factory.controller');
 controller = {};
 
 controller.getAll = (req, res) => {
@@ -14,7 +25,7 @@ controller.insert = (req, res) => {
         advice: [],
         color: req.body.color[0].value,
         colorCode: '',
-        brandName: req.body.brandName[0].value,
+        brandName: req.body.brandName[0].value, 
         contraindications: [],
         dosage: [],
         form: req.body.form[0].value,
@@ -25,9 +36,9 @@ controller.insert = (req, res) => {
         mimsClass: req.body.mimsClass[0].value,
         presentation: req.body.presentation[0].value,
         presentationPack: req.body.presentationPack[0].value,
-        initialThaiFDA: '',
+        initialThaiFDA: req.body.initialThaiFDA[0].value,
         thaiFDAEN: '',
-        thaiFDATH: req.body.thaiFDATH[0].value,
+        thaiFDATH: '',
         usFDA: req.body.usFDA[0].value,
         warning:[],
         registrationNumber: req.body.registrationNumber,
@@ -39,29 +50,46 @@ controller.insert = (req, res) => {
         created_at: created_at
     };
     for (let i = 0; i < req.body.adverseReactions.length;i++){
+        if(req.body.adverseReactions[i].value!==undefined)
         temp.adverseReactions.push(req.body.adverseReactions[i].value)
     }
-    for (let i = 0; i < req.body.advice.length;i++){
+    for (let i = 0; i < req.body.advice.length;i++){ 
+        if(req.body.advice[i].value!==undefined)
         temp.advice.push(req.body.advice[i].value)
     }
     for (let i = 0; i < req.body.contraindications.length;i++){
+        if(req.body.contraindications[i].value!==undefined)
         temp.contraindications.push(req.body.contraindications[i].value)
     }
     for (let i = 0; i < req.body.dosage.length;i++){
+        if(req.body.dosage[i].value!==undefined)
         temp.dosage.push(req.body.dosage[i].value)
     }
     for (let i = 0; i < req.body.indications.length;i++){
+        if(req.body.indications[i].value!==undefined)
         temp.indications.push(req.body.indications[i].value)
     }
     for (let i = 0; i < req.body.interactions.length;i++){
+        if(req.body.interactions[i].value!==undefined)
         temp.interactions.push(req.body.interactions[i].value)
     }
     for (let i = 0; i < req.body.warning.length;i++){
+        if(req.body.warning[i].value!==undefined)
         temp.warning.push(req.body.warning[i].value)
     }
-    console.log(temp)
     service.insert(req.body);
     res.send();
+    controllerColor.checkInsert(req.body.color[0].value);
+    controllerBrand.checkInsert(req.body.brandName[0].value);
+    controlledForm.checkInsert(req.body.form[0].value);
+    controllerGeneric.checkInsert(req.body.genericName[0].value);
+    controllerImprint.checkInsert(req.body.imprint[0].value);
+    controllerMims.checkInsert(req.body.mimsClass[0].value);
+    controllerPresentation.checkInsert(req.body.presentation[0].value);
+    controllerPresentationPack.checkInsert(req.body.presentationPack[0].value);
+    controllerThaiFDA.checkInsert(req.body.initialThaiFDA[0].value);
+    controllerUsFDA.checkInsert(req.body.usFDA[0].value);
+    controllerFactory.checkInsert(req.body.factory[0].value);
 };
 
 controller.update = (req, res) => {

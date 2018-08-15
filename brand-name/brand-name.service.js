@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 service = {}
 
 service.all = () => {
-    return Brand.find().sort( { create_at: -1 } );
+    return Brand.find().sort({ create_at: -1 });
 };
 
 service.insert = (data, create_at) => {
