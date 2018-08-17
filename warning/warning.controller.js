@@ -25,4 +25,20 @@ controller.destroy = ( req, res ) => {
     } );
 };
 
+controller.checkInsert = (data) => {
+    (async () => {
+        let value = { warning: data };
+        let list = await service.all();
+        let check = false;
+        const created_at = new Date().toISOString();
+        for (let i = 0; i < list.length; i++) {
+            if (data === list[i].warning)
+                check = await true;
+        }
+        if (check === false) {
+            service.insert(value, created_at);
+        };
+    })();
+}
+
 module.exports = controller;

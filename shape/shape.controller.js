@@ -22,7 +22,23 @@ controller.update = ( req, res ) => {
 controller.destroy = ( req, res ) => {
     service.delete( req.params.id ).then( () => { 
         res.json( "200" ); 
-    } );
+    } ); 
 };
+
+controller.checkInsert = (data) => {
+    (async () => {
+        let value = { shape: data };
+        let list = await service.all();
+        let check = false;
+        const created_at = new Date().toISOString();
+        for (let i = 0; i < list.length; i++) {
+            if (data === list[i].shape)
+                check = await true;
+        }
+        if (check === false) {
+            service.insert(value, created_at);
+        };
+    })();
+}
 
 module.exports = controller;
