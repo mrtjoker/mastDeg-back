@@ -18,6 +18,7 @@ service.insert = (data) => {
         form: data.form,
         genericName: data.genericName,
         imprint: data.imprint,
+        shape: data.shape,
         indications: data.indications,
         interactions: data.interactions,
         mimsClass: data.mimsClass,

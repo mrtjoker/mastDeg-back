@@ -39,6 +39,7 @@ controller.insert = (req, res) => {
         form: req.body.form[0].value,
         genericName: req.body.genericName[0].value,
         imprint: req.body.imprint[0].value,
+        shape: req.body.shape[0].value,
         indications: [],
         interactions: [],
         mimsClass: req.body.mimsClass[0].value,

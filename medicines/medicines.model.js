@@ -12,6 +12,7 @@ var MedicinesSchema = new Schema({
         form: '',
         genericName: '',
         imprint: '',
+        shape: '',
         indications: [],
         interactions: [],
         mimsClass: '',
