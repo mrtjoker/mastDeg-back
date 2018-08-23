@@ -142,5 +142,22 @@ controller.destroy = (req, res) => {
         res.json("200");
     });
 };
-
+controller.search = (req, res) => {
+    let temp = {
+        brandName: req.body.brandName,
+        genericName: req.body.genericName,
+        thaiFDA: req.body.thaiFDA,
+        form: req.body.form,
+        shape: req.body.shape,
+        color: req.body.color,
+        mimsClass: req.body.mimsClass,
+        scoring: req.body.scoring,
+        logo: req.body.logo,
+        marking: req.body.marking,
+        manufacturer: req.body.manufacturer,
+      }
+    console.log(temp);
+    // service.filter(req.body).then(() => {
+    // });
+}
 module.exports = controller;

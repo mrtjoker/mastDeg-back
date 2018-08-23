@@ -48,4 +48,7 @@ service.delete = (id) => {
     return Medicines.findByIdAndRemove(id);
 };
 
+service.filter = (data) =>{
+
+}
 module.exports = service 
