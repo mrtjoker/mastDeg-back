@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 service = {}
 
 service.all = () => {
-    return Medicines.find().sort( { create_at: -1 } );
+    return Medicines.find().sort({ create_at: -1 });
 };
 
 service.insert = (data) => {
@@ -48,7 +48,41 @@ service.delete = (id) => {
     return Medicines.findByIdAndRemove(id);
 };
 
-service.filter = (data) =>{
+service.searchExact = (data) => {
+    return Medicines.find(data);
+}
 
+service.searchBrand = (data) => {
+    return Medicines.find({ brandName: data });
+}
+service.searchGeneric = (data) => {
+    return Medicines.find({ genericName: data });
+}
+service.searchThaiFDA = (data) => {
+    return Medicines.find({ thaiFDA: data });
+}
+service.searchForm = (data) => {
+    return Medicines.find({ form: data });
+}
+service.searchShape = (data) => {
+    return Medicines.find({ shape: data });
+}
+service.searchColor = (data) => {
+    return Medicines.find({ color: data });
+}
+service.searchMims = (data) => {
+    return Medicines.find({ mimsClass: data });
+}
+service.searchScoring = (data) => {
+    return Medicines.find({ scoring: data });
+}
+service.searchLogo = (data) => {
+    return Medicines.find({ logo: data });
+}
+service.searchMarking = (data) => {
+    return Medicines.find({ marking: data });
+}
+service.searchManufacturer = (data) => {
+    return Medicines.find({ manufacturer: data });
 }
 module.exports = service 
