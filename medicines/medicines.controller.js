@@ -167,7 +167,7 @@ checkSearchExact = (searchData) => {
         let tmp = {};
         let val = {};
         if (searchData.brandName.length > 0)
-            tmp.brandName = searchData.brandName[0].value;
+            tmp.brandName = searchData.brandName;
         if (searchData.genericName.length > 0)
             tmp.genericName = searchData.genericName[0].value;
         if (searchData.thaiFDA.length > 0)
@@ -195,6 +195,7 @@ checkSearchExact = (searchData) => {
 };
 
 controller.search = (req, res) => {
+    console.log(req.body)
     //approximate
     // (async () => {
     //     let list = [];
